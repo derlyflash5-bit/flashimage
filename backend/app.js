@@ -32,6 +32,20 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch((err) => console.error("❌ Erreur de connexion à MongoDB:", err));
 
 // Routes
+app.get('/', (req, res) => {
+  res.json({ 
+    message: '🚀 API Flashimage fonctionne !',
+    status: 'online',
+    version: '1.0.0',
+    endpoints: [
+      '/api/auth',
+      '/api/images',
+      '/api/products',
+      '/api/orders',
+      '/api/contact'
+    ]
+  });
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/images", protect, imageRoutes);
 app.use("/api/products", productRoutes);
