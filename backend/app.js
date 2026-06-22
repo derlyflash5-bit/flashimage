@@ -13,7 +13,7 @@ const testimonialRoutes = require("./Routes/testimonials");
 const contactRoutes = require("./Routes/contact");
 const moncashRoutes = require("./Routes/moncash");
 const settingsRoutes = require("./Routes/settings");
-const flutterwaveRoutes = require("./Routes/flutterwave");
+// const flutterwaveRoutes = require("./Routes/flutterwave");
 const { protect, admin } = require("./middlewares/auth");
 
 const app = express();
@@ -38,7 +38,7 @@ app.use("/api/products", productRoutes);
 app.use("/api/orders", protect, orderRoutes);
 app.use("/api/testimonials", testimonialRoutes);
 app.use("/api/contact", contactRoutes);
-app.use("/api/flutterwave", flutterwaveRoutes);
+// app.use("/api/flutterwave", flutterwaveRoutes);
 app.use("/api/settings", protect, admin, settingsRoutes);
 
 // Route pour le téléchargement des fichiers
